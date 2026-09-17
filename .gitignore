@@ -1,0 +1,27 @@
+# --- Environnement Virtuel ---
+.venv/
+
+
+# --- Variables d'environnement & Secrets ---
+.env
+
+
+# --- Python & Cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- IDEs (VS Code / PyCharm) ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Logs & OS ---
+*.log
+.DS_Store
+Thumbs.db
