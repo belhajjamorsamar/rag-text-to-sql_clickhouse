@@ -1,0 +1,18 @@
+{
+  "nom_table": "magasins",
+  "description_metier": "Contient la liste des points de vente, leurs caractéristiques, localisations et paramètres de gestion",
+  "colonnes_cles": [
+    {"nom": "Magasin", "type": "String", "description": "Identifiant ou code unique du magasin (clé de jointure avec lignes)"},
+    {"nom": "Nom", "type": "Nullable(String)", "description": "Nom commercial du magasin"},
+    {"nom": "Groupe", "type": "Nullable(String)", "description": "Groupe auquel appartient le magasin"},
+    {"nom": "Societe", "type": "Nullable(String)", "description": "Société propriétaire"},
+    {"nom": "Nombre_Caisses", "type": "Nullable(Int32)", "description": "Nombre de caisses enregistreuses installées"},
+    {"nom": "Ville", "type": "Nullable(String)", "description": "Ville d'implantation"},
+    {"nom": "Pays", "type": "Nullable(String)", "description": "Pays d'implantation"},
+    {"nom": "Etat", "type": "String", "description": "État opérationnel du magasin (ouvert/fermé)"},
+    {"nom": "magasin_ferme", "type": "Nullable(Int32)", "description": "Indicateur de fermeture définitive (0 ou 1)"}
+  ],
+  "relations": "Magasin ← table lignes",
+  "volumetrie_approximative": "Répertoire des points de vente",
+  "sensibilite": "Faible — données organisationnelles"
+}

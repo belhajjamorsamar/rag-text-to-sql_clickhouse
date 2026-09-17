@@ -1,0 +1,19 @@
+{
+  "nom_table": "fournisseurs",
+  "description_metier": "Contient le répertoire et les informations de contact, financières et logistiques des fournisseurs",
+  "colonnes_cles": [
+    {"nom": "Fournisseur", "type": "String", "description": "Identifiant ou code unique du fournisseur (clé de jointure avec produits)"},
+    {"nom": "Contact", "type": "Nullable(String)", "description": "Nom de la personne de contact"},
+    {"nom": "Telephone", "type": "Nullable(String)", "description": "Numéro de téléphone principal"},
+    {"nom": "email", "type": "Nullable(String)", "description": "Adresse email du fournisseur"},
+    {"nom": "Ville", "type": "Nullable(String)", "description": "Ville du fournisseur"},
+    {"nom": "Pays", "type": "Nullable(String)", "description": "Pays d'origine ou d'implantation"},
+    {"nom": "Devise", "type": "Nullable(String)", "description": "Devise utilisée pour les transactions"},
+    {"nom": "solde", "type": "Decimal(15, 3)", "description": "Solde financier actuel avec le fournisseur"},
+    {"nom": "seuil_franco_port", "type": "Decimal(15, 3)", "description": "Seuil pour la gratuité du transport"},
+    {"nom": "Magasin", "type": "String", "description": "Magasin rattaché"}
+  ],
+  "relations": "Fournisseur ← table produits",
+  "volumetrie_approximative": "Répertoire fournisseurs global",
+  "sensibilite": "Moyenne — données de contact et financières professionnelles"
+}

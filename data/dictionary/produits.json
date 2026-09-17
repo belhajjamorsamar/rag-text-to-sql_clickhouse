@@ -1,0 +1,17 @@
+{
+  "nom_table": "produits",
+  "description_metier": "Contient le catalogue des produits, leurs caractéristiques et classifications (famille, marque, rayon)",
+  "colonnes_cles": [
+    {"nom": "Produit", "type": "String", "description": "Identifiant unique du produit (clé de jointure avec lignes)"},
+    {"nom": "Designation", "type": "String", "description": "Nom ou libellé commercial officiel du produit"},
+    {"nom": "Rayon", "type": "String", "description": "Rayon du produit"},
+    {"nom": "Famille", "type": "String", "description": "Famille de produits"},
+    {"nom": "SousFamille", "type": "String", "description": "Sous-famille de produits"},
+    {"nom": "Marque", "type": "String", "description": "Marque du produit"},
+    {"nom": "Collection", "type": "String", "description": "Collection associée"},
+    {"nom": "Fournisseur", "type": "String", "description": "Code du fournisseur principal du produit"}
+  ],
+  "relations": "Produit ← table lignes ; Fournisseur → table fournisseurs",
+  "volumetrie_approximative": "Catalogue produits global",
+  "sensibilite": "Faible"
+}

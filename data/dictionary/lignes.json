@@ -1,0 +1,21 @@
+{
+  "nom_table": "lignes",
+  "description_metier": "Contient chaque ligne de produit vendue ou mouvementée, rattachée à un ticket de caisse (entete)",
+  "colonnes_cles": [
+    {"nom": "Ligne", "type": "Int32", "description": "Identifiant unique de la ligne"},
+    {"nom": "Entete", "type": "Nullable(Int32)", "description": "Référence au ticket de caisse global"},
+    {"nom": "Magasin", "type": "Nullable(String)", "description": "Code du magasin concerné"},
+    {"nom": "Nature", "type": "Nullable(String)", "description": "Type de mouvement (ex: 'Vente')"},
+    {"nom": "Produit", "type": "Nullable(String)", "description": "Identifiant ou code du produit"},
+    {"nom": "Designation", "type": "Nullable(String)", "description": "Libellé commercial du produit sur la ligne"},
+    {"nom": "Quantite", "type": "Nullable(Decimal(10, 3))", "description": "Quantité vendue ou mouvementée"},
+    {"nom": "Prix_Vente", "type": "Nullable(Decimal(15, 3))", "description": "Prix de vente unitaire effectif"},
+    {"nom": "Total", "type": "Nullable(Decimal(15, 3))", "description": "Montant total de la ligne"},
+    {"nom": "Total_HT", "type": "Nullable(Decimal(15, 3))", "description": "Montant total Hors Taxe"},
+    {"nom": "Total_TVA", "type": "Nullable(Decimal(15, 3))", "description": "Montant total de la TVA"},
+    {"nom": "Date", "type": "DateTime", "description": "Date et heure de la transaction (si présente dans entete ou lignes)"}
+  ],
+  "relations": "Entete → table entetes ; Produit → table produits ; Magasin → table magasins",
+  "volumetrie_approximative": "Donnée de production ClickHouse",
+  "sensibilite": "Faible — données analytiques de vente"
+}

@@ -1,0 +1,20 @@
+{
+  "nom_table": "entetes",
+  "description_metier": "Contient les informations globales de chaque ticket de caisse, facture ou transaction (en-tête), rattachée aux lignes",
+  "colonnes_cles": [
+    {"nom": "Entete", "type": "Int32", "description": "Identifiant unique du ticket de caisse ou de la transaction (clé de jointure)"},
+    {"nom": "Date", "type": "Nullable(Date32)", "description": "Date de la transaction"},
+    {"nom": "Heure", "type": "Nullable(String)", "description": "Heure de la transaction"},
+    {"nom": "Magasin", "type": "Nullable(String)", "description": "Code du magasin où a eu lieu la vente"},
+    {"nom": "Client", "type": "Nullable(Int32)", "description": "Identifiant du client associé au ticket"},
+    {"nom": "Vendeur", "type": "Nullable(String)", "description": "Identifiant du vendeur"},
+    {"nom": "Total_HT", "type": "Nullable(Decimal(15, 3))", "description": "Montant total Hors Taxe du ticket"},
+    {"nom": "Total_TTC", "type": "Nullable(Decimal(15, 3))", "description": "Montant total TTC du ticket"},
+    {"nom": "Total_Quantite", "type": "Nullable(Decimal(10, 3))", "description": "Quantité totale d'articles sur le ticket"},
+    {"nom": "Numero_Facture", "type": "Nullable(String)", "description": "Numéro de facture associé si applicable"},
+    {"nom": "Etat", "type": "Nullable(String)", "description": "État de la transaction (ex: validée, annulée)"}
+  ],
+  "relations": "Entete ← table lignes ; Magasin → table magasins",
+  "volumetrie_approximative": "Transactions globales de vente",
+  "sensibilite": "Faible à moyenne — données de vente et de caisse"
+}
