@@ -1,6 +1,6 @@
 {
   "nom_table": "magasins",
-  "description_metier": "Contient la liste des points de vente, leurs caractéristiques, localisations et paramètres de gestion",
+  "metadata": "Contient la liste des points de vente, leurs caractéristiques, localisations et paramètres de gestion",
   "colonnes_cles": [
     {"nom": "Magasin", "type": "String", "description": "Identifiant ou code unique du magasin (clé de jointure avec lignes)"},
     {"nom": "Nom", "type": "Nullable(String)", "description": "Nom commercial du magasin"},

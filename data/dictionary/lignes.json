@@ -1,6 +1,6 @@
 {
   "nom_table": "lignes",
-  "description_metier": "Contient chaque ligne de produit vendue ou mouvementée, rattachée à un ticket de caisse (entete)",
+  "metadata": "Contient chaque ligne de produit vendue ou mouvementée, rattachée à un ticket de caisse (entete)",
   "colonnes_cles": [
     {"nom": "Ligne", "type": "Int32", "description": "Identifiant unique de la ligne"},
     {"nom": "Entete", "type": "Nullable(Int32)", "description": "Référence au ticket de caisse global"},

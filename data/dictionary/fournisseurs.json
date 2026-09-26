@@ -1,6 +1,6 @@
 {
   "nom_table": "fournisseurs",
-  "description_metier": "Contient le répertoire et les informations de contact, financières et logistiques des fournisseurs",
+  "metadata": "Contient le répertoire et les informations de contact, financières et logistiques des fournisseurs",
   "colonnes_cles": [
     {"nom": "Fournisseur", "type": "String", "description": "Identifiant ou code unique du fournisseur (clé de jointure avec produits)"},
     {"nom": "Contact", "type": "Nullable(String)", "description": "Nom de la personne de contact"},
