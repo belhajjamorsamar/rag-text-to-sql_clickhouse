@@ -1,21 +1,24 @@
 {
   "nom_table": "lignes",
-  "metadata": "Contient chaque ligne de produit vendue ou mouvementée, rattachée à un ticket de caisse (entete)",
+  "metadata": "Contient le détail des articles ou produits vendus pour chaque ligne de ticket de caisse ou de facture, rattachée à l'en-tête et aux produits",
   "colonnes_cles": [
-    {"nom": "Ligne", "type": "Int32", "description": "Identifiant unique de la ligne"},
-    {"nom": "Entete", "type": "Nullable(Int32)", "description": "Référence au ticket de caisse global"},
-    {"nom": "Magasin", "type": "Nullable(String)", "description": "Code du magasin concerné"},
-    {"nom": "Nature", "type": "Nullable(String)", "description": "Type de mouvement (ex: 'Vente')"},
-    {"nom": "Produit", "type": "Nullable(String)", "description": "Identifiant ou code du produit"},
-    {"nom": "Designation", "type": "Nullable(String)", "description": "Libellé commercial du produit sur la ligne"},
-    {"nom": "Quantite", "type": "Nullable(Decimal(10, 3))", "description": "Quantité vendue ou mouvementée"},
-    {"nom": "Prix_Vente", "type": "Nullable(Decimal(15, 3))", "description": "Prix de vente unitaire effectif"},
+    {"nom": "Ligne", "type": "Int32", "description": "Identifiant unique de la ligne de vente"},
+    {"nom": "Entete", "type": "Nullable(Int32)", "description": "Clé étrangère rattachant la ligne à son ticket parent (table entetes)"},
+    {"nom": "Magasin", "type": "Nullable(String)", "description": "Code du magasin où la ligne a été vendue"},
+    {"nom": "Produit", "type": "Nullable(String)", "description": "Code ou référence du produit (clé de jointure vers la table produits)"},
+    {"nom": "Designation", "type": "Nullable(String)", "description": "Libellé ou nom de l'article vendu"},
+    {"nom": "Couleur", "type": "Nullable(String)", "description": "Couleur de l'article si applicable"},
+    {"nom": "Taille", "type": "Nullable(String)", "description": "Taille de l'article si applicable"},
+    {"nom": "Quantite", "type": "Nullable(Decimal(10, 3))", "description": "Quantité vendue pour cet article"},
+    {"nom": "Prix_Normal", "type": "Nullable(Decimal(15, 3))", "description": "Prix unitaire normal de l'article"},
+    {"nom": "Prix_Vente", "type": "Nullable(Decimal(15, 3))", "description": "Prix de vente effectif appliqué"},
+    {"nom": "Remise_Vente", "type": "Nullable(Decimal(6, 3))", "description": "Taux ou montant de la remise accordée"},
     {"nom": "Total", "type": "Nullable(Decimal(15, 3))", "description": "Montant total de la ligne"},
-    {"nom": "Total_HT", "type": "Nullable(Decimal(15, 3))", "description": "Montant total Hors Taxe"},
-    {"nom": "Total_TVA", "type": "Nullable(Decimal(15, 3))", "description": "Montant total de la TVA"},
-    {"nom": "Date", "type": "DateTime", "description": "Date et heure de la transaction (si présente dans entete ou lignes)"}
+    {"nom": "Total_HT", "type": "Nullable(Decimal(15, 3))", "description": "Montant total Hors Taxe de la ligne"},
+    {"nom": "Taux_TVA", "type": "Nullable(Decimal(6, 2))", "description": "Taux de TVA appliqué"},
+    {"nom": "Total_TVA", "type": "Nullable(Decimal(15, 3))", "description": "Montant total de la TVA de la ligne"}
   ],
   "relations": "Entete → table entetes ; Produit → table produits ; Magasin → table magasins",
-  "volumetrie_approximative": "Donnée de production ClickHouse",
-  "sensibilite": "Faible — données analytiques de vente"
+  "volumetrie_approximative": "Lignes de détail des transactions de vente",
+  "sensibilite": "Faible à moyenne — détails des articles vendus"
 }
